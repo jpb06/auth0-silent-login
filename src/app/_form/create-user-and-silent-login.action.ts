@@ -25,6 +25,8 @@ export const createUserAndSilentLoginAction = async () => {
   // );
 
   cookies().set("id_token", loginResult.id_token, { httpOnly: true });
+  cookies().set("access_token", loginResult.access_token, { httpOnly: true });
+
   // cookies().set("state", state, { httpOnly: true });
 
   redirect("/api/auth/callback");
