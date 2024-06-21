@@ -19,13 +19,13 @@ export const createUserAndSilentLoginAction = async () => {
   const loginResult = await silentLogin(data);
   console.info("silent login result", loginResult);
 
-  const state = btoa(`{"returnTo":"http://localhost:3000/logged-in"}`).slice(
-    0,
-    -2
-  );
+  // const state = btoa(`{"returnTo":"http://localhost:3000/logged-in"}`).slice(
+  //   0,
+  //   -2
+  // );
 
   cookies().set("id_token", loginResult.id_token, { httpOnly: true });
-  cookies().set("state", state, { httpOnly: true });
+  // cookies().set("state", state, { httpOnly: true });
 
   redirect("/api/auth/callback");
 };
