@@ -1,4 +1,4 @@
-import { LoggedIn } from "./_client/LoggedIn";
+import { LoggedIn } from './_client/LoggedIn';
 
 const LoggedInPage = () => <LoggedIn />;
 export default LoggedInPage;

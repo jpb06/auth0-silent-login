@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import type { FunctionComponent } from "react";
+import type { FunctionComponent } from 'react';
 
 interface Props {
   action: () => Promise<void>;

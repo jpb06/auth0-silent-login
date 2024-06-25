@@ -10,9 +10,9 @@ export const getBaseUrl = (): string => {
     return `https://${vercelUrl}`;
   }
 
-  if (typeof window !== "undefined") {
+  if (typeof window !== 'undefined') {
     return window.location.origin;
   }
 
-  return "http://localhost:3000";
+  return 'http://localhost:3000';
 };

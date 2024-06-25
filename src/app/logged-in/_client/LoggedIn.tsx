@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useUser } from "@auth0/nextjs-auth0/client";
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 export const LoggedIn = () => {
   const { user, error, isLoading } = useUser();
