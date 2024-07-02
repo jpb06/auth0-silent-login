@@ -17,7 +17,7 @@ export const setSessionCookie = (encryptedSession: string) => {
   if (chunkCount === 1) {
     const chunkCookies = getAllCookies();
     chunkCookies.forEach((cookie) => {
-      if (cookie.name.startsWith('silentLogin')) {
+      if (cookie.name.startsWith(cookieName)) {
         deleteCookie(cookie.name);
       }
     });
