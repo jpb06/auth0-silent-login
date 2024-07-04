@@ -7,18 +7,23 @@ export const getSessionPayload = (
   { access_token, expires_in, id_token, scope }: LoginResult,
   email: string,
 ) => {
-  const { nickname, name, picture, updated_at, email_verified } =
+  const secret = process.env.AUTH0_SECRET;
+  if (secret === undefined) {
+    throw new Error('AUTH0_SECRET env variable secret not set');
+  }
+
+  const { nickname, name, picture, updated_at, email_verified, sub } =
     decodeJwt(id_token);
 
   return {
-    secret: process.env.AUTH0_SECRET ?? '',
+    secret,
     user: {
       nickname,
       name,
       picture,
       updated_at,
       email_verified,
-      sub: email,
+      sub,
       email,
     },
     idToken: id_token,
