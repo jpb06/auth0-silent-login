@@ -10,10 +10,10 @@ const auth0Config: ConfigParameters = {
   },
 };
 
-export const auth0 = initAuth0(auth0Config);
+const auth0 = initAuth0(auth0Config);
 
 export const GET = auth0.handleAuth({
-  login: auth0.handleLogin((req) => {
+  login: auth0.handleLogin((_req) => {
     const returnTo = process.env.AUTH0_LOGIN_RETURN_TO ?? '/logged-in';
 
     return {
