@@ -9,7 +9,7 @@ interface Props {
 export const Form: FunctionComponent<Props> = ({ action }) => (
   <form
     action={() => {
-      void action();
+      action();
     }}
   >
     <button>Login</button>

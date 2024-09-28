@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { decodeJwt } from 'jose';
 
 import { type LoginResult } from '../types';
