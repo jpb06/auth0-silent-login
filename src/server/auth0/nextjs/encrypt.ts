@@ -6,7 +6,10 @@ interface EncryptionArgs {
   secret: string;
 }
 
-export const encrypt = async ({ secret, ...payload }: EncryptionArgs) => {
+export const encrypt = async ({
+  secret,
+  ...payload
+}: EncryptionArgs): Promise<string> => {
   const epochNow = Date.now() / 1000;
   const sevenDays = 7 * 24 * 60 * 60;
   const expirationTime = epochNow + sevenDays;
