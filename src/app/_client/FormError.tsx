@@ -7,7 +7,7 @@ type FormErrorProps = {
 };
 
 export const FormError: FunctionComponent<FormErrorProps> = ({ state }) => {
-  if (state.message.length === 0 || state.message === 'NEXT_REDIRECT') {
+  if (state.message.length === 0) {
     return null;
   }
 
