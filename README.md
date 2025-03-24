@@ -14,7 +14,7 @@ This is a reproduction repo for the following workflow requirement on auth0:
 - Backend - [Session payload](./src/server/auth0/nextjs/get-session-payload.ts) - Generate a payload for the session to be stored on one or several cookies, depending on payload size.
 - Backend - [Encrypt payload](./src/server/auth0/nextjs/encrypt.ts) - Encrypt the session payload using auth0 secret [generated earlier](https://github.com/auth0/nextjs-auth0?tab=readme-ov-file#getting-started).
 - Backend - [Cookie creation](./src/server/auth0/nextjs/set-session-cookie.ts) - Set session cookie.
-- Backend - [Redirect](./src/app/_form/create-user-and-silent-login.action.ts) - Finally, redirect to `/`.
+- Backend - [Redirect](./src/app/_server/create-user-and-silent-login.action.ts) - Finally, redirect to `/`.
 - Frontend - [User is logged in](./src/app/_client/User.tsx) - See the user as logged in, per `@auth0/nextjs-auth0`.
 
 ## Encountered issues

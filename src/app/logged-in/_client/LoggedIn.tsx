@@ -1,6 +1,6 @@
 'use client';
 
-import { useUser } from '@auth0/nextjs-auth0/client';
+import { useUser } from '@auth0/nextjs-auth0';
 
 export const LoggedIn = () => {
   const { user, error, isLoading } = useUser();
@@ -8,7 +8,7 @@ export const LoggedIn = () => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-  if (error !== undefined) {
+  if (error) {
     return <div>{error.message}</div>;
   }
 

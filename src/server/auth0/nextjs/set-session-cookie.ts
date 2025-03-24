@@ -4,14 +4,14 @@ import { cookies } from 'next/headers';
 const MAX_COOKIE_SIZE = 4096;
 const cookieName = process.env.AUTH0_SESSION_NAME ?? 'appSession';
 
-export const setSessionCookie = (encryptedSession: string) => {
+export const setSessionCookie = async (encryptedSession: string) => {
   const emptyCookie = serialize(`${cookieName}.0`, '', {});
   const chunkSize = MAX_COOKIE_SIZE - emptyCookie.length;
   const {
     getAll: getAllCookies,
     delete: deleteCookie,
     set: setCookie,
-  } = cookies();
+  } = await cookies();
 
   const chunkCount = Math.ceil(encryptedSession.length / chunkSize);
   if (chunkCount === 1) {
